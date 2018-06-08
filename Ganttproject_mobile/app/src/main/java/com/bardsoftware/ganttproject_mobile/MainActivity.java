@@ -16,14 +16,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openProtoFile(View view) {
-        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-        intent.setType("*/*");
+        Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+        intent.setType("application/octet-stream");
         startActivityForResult(intent, OPEN_FILE_CODE);
     }
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == OPEN_FILE_CODE && resultCode == RESULT_OK && data != null)
         { String filePath = data.getDataString();
-        // do somthing...
+            Bundle b = new Bundle();
+            b.putString(Constants.FILE_PATH, filePath);
+            Class TasksActivity = TasksActivity.class;
+            Intent intent = new Intent(this, TasksActivity);
+            intent.putExtras(b);
+            startActivity(intent);
         }
         super.onActivityResult(requestCode, resultCode, data);
 
