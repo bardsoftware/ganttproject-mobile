@@ -1,20 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
         <android.support.v7.widget.AppCompatCheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/task_checkbox"/>
-        <TextView
+
+            <TextView
+                android:id="@+id/task_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/tasks_text_size"
+                tools:layout_width="match_parent" />
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/delete_task_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/task_textview"
-            />
-    </LinearLayout>
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/delete_margin"
+            android:layout_marginEnd="@dimen/delete_margin"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_delete_black_24dp"
+            android:visibility="gone"
+            android:contentDescription="@string/trash_can" />
+    </RelativeLayout>
 </android.support.constraint.ConstraintLayout>

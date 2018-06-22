@@ -7,7 +7,7 @@ import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final int OPEN_FILE_CODE = 100 ;
+    private static final int OPEN_FILE_CODE = 100;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,9 +20,10 @@ public class MainActivity extends AppCompatActivity {
         intent.setType("application/octet-stream");
         startActivityForResult(intent, OPEN_FILE_CODE);
     }
+
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == OPEN_FILE_CODE && resultCode == RESULT_OK && data != null)
-        { String filePath = data.getDataString();
+        if (requestCode == OPEN_FILE_CODE && resultCode == RESULT_OK && data != null) {
+            String filePath = data.getDataString();
             Bundle b = new Bundle();
             b.putString(Constants.FILE_PATH, filePath);
             Class TasksActivity = TasksActivity.class;
