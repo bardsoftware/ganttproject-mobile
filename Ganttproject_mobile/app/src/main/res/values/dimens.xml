@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="fab_margin">10dp</dimen>
+    <dimen name="tasks_text_size">14sp</dimen>
+    <dimen name="tasks_layout_margin_left">5dp</dimen>
+    <dimen name="delete_margin">3dp</dimen>
+    <dimen name="tasks_scrollview_margin_bottom">57dp</dimen>
+</resources>

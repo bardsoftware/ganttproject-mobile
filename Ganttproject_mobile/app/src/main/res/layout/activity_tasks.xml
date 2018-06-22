@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TasksActivity">
+
+
+    <RelativeLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginStart="@dimen/tasks_layout_margin_left">
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/tasks_scrollview_margin_bottom">
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/tasks_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+           />
+</ScrollView>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="saveTasksFile"
+            android:text="@string/save"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/fab_margin"/>
+
+
+    </RelativeLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/add_task_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="@dimen/fab_margin"
+        android:layout_marginEnd="@dimen/fab_margin"
+        android:src="@drawable/ic_add_24dp"
+        app:fabSize="normal"
+        android:onClick="addTaskClicked">
+
+    </android.support.design.widget.FloatingActionButton>
+
+
+
+
+</FrameLayout>

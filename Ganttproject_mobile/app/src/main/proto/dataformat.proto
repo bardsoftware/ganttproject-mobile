@@ -1,0 +1,10 @@
+syntax = "proto3";
+package dataformat;
+
+message Task {
+    string name = 1;
+    bool is_done = 2;
+}
+message Tasks {
+    repeated Task task= 1;
+}
