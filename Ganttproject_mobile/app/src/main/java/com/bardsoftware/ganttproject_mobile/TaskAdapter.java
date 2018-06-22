@@ -52,6 +52,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
                 public void onClick(View view) {
                     tasksBuilder.removeTask(position);
                     taskStateArray.delete(position);
+                    currentSelectedPosition = RecyclerView.NO_POSITION;
                     notifyDataSetChanged();
 
                 }
